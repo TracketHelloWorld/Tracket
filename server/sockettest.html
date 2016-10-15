@@ -3,11 +3,11 @@
   var socket = io();
   function registerMac()
   {
-    socket.emit("registerMacListener","testmac");
+    socket.emit("requestTest","testdata");
   }
-  socket.on("status",function(data)
+  socket.on("feedback",function(data)
   {
-    console.log("status");
+    console.log("feedback");
     console.log(data);
   });
   socket.on("tasks",function(data)

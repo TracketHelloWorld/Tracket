@@ -9,18 +9,16 @@ var socketListeners = {};
 function socketIOinit(io)
 {
   console.log("running on port");
-  //angular client connects
+  //python client connects
   io.on('connection',function(socket){
-    console.log("connected", socket);
     // socketListeners
-    // call this immediately on loading a PC
-    socket.on('registerMacListener',function(macaddr){
-      console.log("mac addr: " + macaddr);
-      console.log("received mac request");
-      if (!socketListeners[macaddr]) {
+    // call this immediately on PC client
+    socket.on('registerListener',function(data){
+      console.log("uid: " + data['UID']);
+      /*if (!socketListeners[macaddr]) {
         socketListeners[macaddr] = [];
       }
-      socketListeners[macaddr].push(socket);
+      socketListeners[macaddr].push(socket);*/
     });
   });
 }
@@ -33,6 +31,8 @@ function onEventFromDesktop(type, data, mac) {
   }
 }
 
+
+//junk
 function listenForMac(io,mac)
 {
   db.selectAll("computers",function(results) {

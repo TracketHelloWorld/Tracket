@@ -32,7 +32,7 @@ app.use(cookieSession({
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://nisarg.me:1337');
+    res.setHeader('Access-Control-Allow-Origin', 'http://159.203.126.117:6969');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -61,14 +61,8 @@ app.get('/', function (req, res) {
   }
 });
 
-app.post('/sendinfo/:mac', function(req, res) {
-  res.send("json");
-  socketHandler.onEventFromDesktop("status",parseIncomingJSONFromDesktop(req.body),req.params.mac);
-});
-
-app.post('/sendtasks/:mac', function(req, res) {
-  res.send("json");
-  socketHandler.onEventFromDesktop("tasks",parseIncomingJSONFromDesktop(req.body),req.params.mac);
+app.get('/test', function(req, res) {
+	  res.sendFile(path + "/sockettest.html");
 });
 
 app.get('/getmac', function(req, res){
@@ -104,14 +98,6 @@ function parseIncomingJSONFromDesktop(rawjson)
   var innerJSON = rawjson.json_payload;
   return innerJSON;
 }
-
-app.get('/test', function(req, res) {
-  res.sendFile(path + "/sockettest.html");
-});
-
-app.get('/getpcs', function(req, res){
-
-});
 
 app.get('/css/:file', function (req, res) { sendFolder("css",req,res); });
 app.get('/images/:file', function (req, res) { sendFolder("images",req,res); });
@@ -184,6 +170,6 @@ app.get('/signout', function(req, res) {
   res.redirect('/');
 });
 
-var expserv = http.listen(1337, function () {
-  console.log('Spexy Server!');
+var expserv = http.listen(6969, function () {
+  console.log('Tracket Server!');
 });
