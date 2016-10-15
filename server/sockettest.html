@@ -1,0 +1,19 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  function registerMac()
+  {
+    socket.emit("requestTest","testdata");
+  }
+  socket.on("feedback",function(data)
+  {
+    console.log("feedback");
+    console.log(data);
+  });
+  socket.on("tasks",function(data)
+  {
+    console.log("tasks");
+    console.log(data);
+  });
+</script>
+<a href="#" onclick="registerMac()">Start</a>
