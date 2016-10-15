@@ -1,0 +1,95 @@
+[
+	{
+		"KBrecv": 23.295,
+		"cpuCoreInfo": {
+			"core1": 4.7,
+			"core3": 6.2,
+			"core0": 1.6,
+			"core2": 1.6
+		},
+		"os": ["nt", "Windows"],
+		"availmem": 4.808,
+		"totmem": 7.827,
+		"phypro": 4,
+		"permem": 38.6,
+		"logpro": 4,
+		"KBsent": 25.329,
+		"cpuName": "Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz",
+		"disks" : [
+			{
+			"mtpoint": "C:\\",
+			"usedspace": 214.38,
+			"totspace": 919.281,
+			"device": "C:\\",
+			"fsystem": "NTFS",
+			"freespace": 704.902
+			},
+			{
+			"mtpoint": "C:\\",
+			"usedspace": 214.38,
+			"totspace": 919.281,
+			"device": "C:\\",
+			"fsystem": "NTFS",
+			"freespace": 704.902
+			},
+			{
+			"mtpoint": "C:\\",
+			"usedspace": 214.38,
+			"totspace": 919.281,
+			"device": "C:\\",
+			"fsystem": "NTFS",
+			"freespace": 704.902
+			}
+		]
+	},
+	{
+		"KBrecv": 9.135,
+		"cpuCoreInfo": {
+			"core1": 3.1,
+			"core3": 1.6,
+			"core0": 6.2,
+			"core2": 1.6
+		},
+		"os": ["nt", "Windows"],
+		"availmem": 4.822,
+		"totmem": 7.827,
+		"phypro": 4,
+		"permem": 38.4,
+		"logpro": 4,
+		"KBsent": 0.043,
+		"cpuName": "Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz",
+		"disk0": {
+			"mtpoint": "C:\\",
+			"usedspace": 214.38,
+			"totspace": 919.281,
+			"device": "C:\\",
+			"fsystem": "NTFS",
+			"freespace": 704.902
+		}
+	},
+	{
+		"KBrecv": 29.135,
+		"cpuCoreInfo": {
+			"core1": 3.1,
+			"core3": 1.6,
+			"core0": 6.2,
+			"core2": 1.6
+		},
+		"os": ["nt", "Windows"],
+		"availmem": 3.822,
+		"totmem": 6.827,
+		"phypro": 4,
+		"permem": 38.4,
+		"logpro": 4,
+		"KBsent": 23.043,
+		"cpuName": "Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz",
+		"disk0": {
+			"mtpoint": "C:\\",
+			"usedspace": 214.38,
+			"totspace": 919.281,
+			"device": "C:\\",
+			"fsystem": "NTFS",
+			"freespace": 704.902
+		}
+	}
+]

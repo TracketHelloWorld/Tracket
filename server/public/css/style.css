@@ -1,0 +1,80 @@
+*{
+	transition: all 0.5s linear;
+}
+
+.header{
+	width: 100%;
+	text-align: center;
+	color: #f0f0f0;
+	
+} 
+
+.header h1{
+    font-size: 6em;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 100;
+}
+
+.headTitle{
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 100;
+}
+
+.dashTitle{
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 100;
+	font-style: italic;
+	color: gray;
+	width: 100%;
+    margin: 0.25em;
+}
+
+.sideTitleMargin{
+	padding: 16px 32px;
+}
+
+.storageChart{
+	text-align: center;
+}
+
+.storageChart p{
+	line-height: 10px;
+}
+
+.loginBox{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em 0 2em 0;
+}
+
+.tag{
+	color: #f0f0f0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6em;
+}
+
+.tag h3{
+	font-family: 'Raleway', sans-serif;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+    color: rgba(100, 100, 100, 0.56);
+}
+
+.mdl-data-table__cell--non-numeric{
+	text-align: center !important;
+}
+
+.demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+
+.navActive {
+	color: rgba(100, 100, 100, 0.56) !important;
+    background-color: #e0e0e0;
+}

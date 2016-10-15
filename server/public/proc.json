@@ -1,0 +1,569 @@
+[{
+	"memPerc": "0.000",
+	"PID": 0,
+	"name": "System Idle Process"
+}, {
+	"memPerc": "1.340",
+	"PID": 4,
+	"name": "System"
+}, {
+	"memPerc": "0.127",
+	"PID": 380,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.013",
+	"PID": 400,
+	"name": "smss.exe"
+}, {
+	"memPerc": "0.239",
+	"PID": 436,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.323",
+	"PID": 440,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.678",
+	"PID": 520,
+	"name": "dwm.exe"
+}, {
+	"memPerc": "1.104",
+	"PID": 632,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.054",
+	"PID": 672,
+	"name": "csrss.exe"
+}, {
+	"memPerc": "0.054",
+	"PID": 776,
+	"name": "wininit.exe"
+}, {
+	"memPerc": "0.086",
+	"PID": 792,
+	"name": "csrss.exe"
+}, {
+	"memPerc": "0.112",
+	"PID": 852,
+	"name": "winlogon.exe"
+}, {
+	"memPerc": "0.233",
+	"PID": 896,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.093",
+	"PID": 900,
+	"name": "services.exe"
+}, {
+	"memPerc": "0.189",
+	"PID": 908,
+	"name": "lsass.exe"
+}, {
+	"memPerc": "0.252",
+	"PID": 1016,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.075",
+	"PID": 1068,
+	"name": "conhost.exe"
+}, {
+	"memPerc": "0.099",
+	"PID": 1092,
+	"name": "BDExtHost.exe"
+}, {
+	"memPerc": "0.095",
+	"PID": 1116,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.715",
+	"PID": 1156,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.161",
+	"PID": 1188,
+	"name": "WUDFHost.exe"
+}, {
+	"memPerc": "0.338",
+	"PID": 1200,
+	"name": "IAStorIcon.exe"
+}, {
+	"memPerc": "0.091",
+	"PID": 1340,
+	"name": "igfxCUIService.exe"
+}, {
+	"memPerc": "0.370",
+	"PID": 1348,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.167",
+	"PID": 1372,
+	"name": "spoolsv.exe"
+}, {
+	"memPerc": "0.492",
+	"PID": 1468,
+	"name": "DellUpTray.exe"
+}, {
+	"memPerc": "0.099",
+	"PID": 1472,
+	"name": "nvvsvc.exe"
+}, {
+	"memPerc": "0.153",
+	"PID": 1528,
+	"name": "FlashPlayerPlugin_23_0_0_162.exe"
+}, {
+	"memPerc": "0.209",
+	"PID": 1572,
+	"name": "nvxdsync.exe"
+}, {
+	"memPerc": "0.159",
+	"PID": 1580,
+	"name": "nvvsvc.exe"
+}, {
+	"memPerc": "0.076",
+	"PID": 1596,
+	"name": "rundll32.exe"
+}, {
+	"memPerc": "0.206",
+	"PID": 1604,
+	"name": "NvBackend.exe"
+}, {
+	"memPerc": "0.074",
+	"PID": 1668,
+	"name": "IntelCpHeciSvc.exe"
+}, {
+	"memPerc": "0.079",
+	"PID": 1760,
+	"name": "RtkAudioService64.exe"
+}, {
+	"memPerc": "0.216",
+	"PID": 1836,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.124",
+	"PID": 1968,
+	"name": "RAVBg64.exe"
+}, {
+	"memPerc": "0.116",
+	"PID": 1976,
+	"name": "RAVBg64.exe"
+}, {
+	"memPerc": "0.063",
+	"PID": 2080,
+	"name": "conhost.exe"
+}, {
+	"memPerc": "0.068",
+	"PID": 2244,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.286",
+	"PID": 2276,
+	"name": "DUWrapperService.exe"
+}, {
+	"memPerc": "0.287",
+	"PID": 2288,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.046",
+	"PID": 2340,
+	"name": "KMSSS.exe"
+}, {
+	"memPerc": "0.067",
+	"PID": 2404,
+	"name": "mfevtps.exe"
+}, {
+	"memPerc": "0.288",
+	"PID": 2452,
+	"name": "cmw_srv.exe"
+}, {
+	"memPerc": "0.077",
+	"PID": 2472,
+	"name": "BtwRSupportService.exe"
+}, {
+	"memPerc": "0.049",
+	"PID": 2500,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.135",
+	"PID": 2508,
+	"name": "BingDesktopUpdater.exe"
+}, {
+	"memPerc": "0.070",
+	"PID": 2544,
+	"name": "esif_uf.exe"
+}, {
+	"memPerc": "0.135",
+	"PID": 2564,
+	"name": "GfExperienceService.exe"
+}, {
+	"memPerc": "0.049",
+	"PID": 2596,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.003",
+	"PID": 2672,
+	"name": "AAM Updates Notifier.exe"
+}, {
+	"memPerc": "0.110",
+	"PID": 2704,
+	"name": "NvNetworkService.exe"
+}, {
+	"memPerc": "0.078",
+	"PID": 2712,
+	"name": "mfemms.exe"
+}, {
+	"memPerc": "0.117",
+	"PID": 2732,
+	"name": "NvStreamService.exe"
+}, {
+	"memPerc": "0.081",
+	"PID": 2824,
+	"name": "PEFService.exe"
+}, {
+	"memPerc": "0.095",
+	"PID": 2844,
+	"name": "btwdins.exe"
+}, {
+	"memPerc": "0.482",
+	"PID": 2884,
+	"name": "OfficeClickToRun.exe"
+}, {
+	"memPerc": "0.210",
+	"PID": 2944,
+	"name": "svchost.exe"
+}, {
+	"memPerc": "0.129",
+	"PID": 3052,
+	"name": "vmware-authd.exe"
+}, {
+	"memPerc": "0.106",
+	"PID": 3060,
+	"name": "vmware-usbarbitrator64.exe"
+}, {
+	"memPerc": "0.052",
+	"PID": 3116,
+	"name": "vmnetdhcp.exe"
+}, {
+	"memPerc": "0.082",
+	"PID": 3168,
+	"name": "vmnat.exe"
+}, {
+	"memPerc": "0.087",
+	"PID": 3176,
+	"name": "mfevtps.exe"
+}, {
+	"memPerc": "0.063",
+	"PID": 3252,
+	"name": "WavesSysSvc64.exe"
+}, {
+	"memPerc": "0.060",
+	"PID": 3284,
+	"name": "wlanext.exe"
+}, {
+	"memPerc": "0.056",
+	"PID": 3292,
+	"name": "conhost.exe"
+}, {
+	"memPerc": "0.103",
+	"PID": 3340,
+	"name": "BDAppHost.exe"
+}, {
+	"memPerc": "0.409",
+	"PID": 3420,
+	"name": "ApplicationFrameHost.exe"
+}, {
+	"memPerc": "0.164",
+	"PID": 3468,
+	"name": "NvStreamNetworkService.exe"
+}, {
+	"memPerc": "0.130",
+	"PID": 3624,
+	"name": "RAVBg64.exe"
+}, {
+	"memPerc": "0.113",
+	"PID": 4000,
+	"name": "mfefire.exe"
+}, {
+	"memPerc": "0.546",
+	"PID": 4044,
+	"name": "McSvHost.exe"
+}, {
+	"memPerc": "0.047",
+	"PID": 4064,
+	"name": "esif_assist_64.exe"
+}, {
+	"memPerc": "0.221",
+	"PID": 4228,
+	"name": "WmiPrvSE.exe"
+}, {
+	"memPerc": "0.443",
+	"PID": 4644,
+	"name": "WmiPrvSE.exe"
+}, {
+	"memPerc": "0.362",
+	"PID": 4740,
+	"name": "vmware-hostd.exe"
+}, {
+	"memPerc": "0.095",
+	"PID": 4916,
+	"name": "SearchFilterHost.exe"
+}, {
+	"memPerc": "0.293",
+	"PID": 4948,
+	"name": "FlashPlayerPlugin_23_0_0_162.exe"
+}, {
+	"memPerc": "0.044",
+	"PID": 5012,
+	"name": "fsnotifier.exe"
+}, {
+	"memPerc": "0.068",
+	"PID": 5140,
+	"name": "mfefire.exe"
+}, {
+	"memPerc": "0.089",
+	"PID": 5184,
+	"name": "mcsacore.exe"
+}, {
+	"memPerc": "0.090",
+	"PID": 5200,
+	"name": "BDSurrogateHost.exe"
+}, {
+	"memPerc": "0.108",
+	"PID": 5208,
+	"name": "McAPExe.exe"
+}, {
+	"memPerc": "0.333",
+	"PID": 5244,
+	"name": "mcshield.exe"
+}, {
+	"memPerc": "0.108",
+	"PID": 5632,
+	"name": "SearchProtocolHost.exe"
+}, {
+	"memPerc": "0.331",
+	"PID": 5812,
+	"name": "sihost.exe"
+}, {
+	"memPerc": "0.217",
+	"PID": 5832,
+	"name": "taskhostw.exe"
+}, {
+	"memPerc": "0.108",
+	"PID": 5892,
+	"name": "conhost.exe"
+}, {
+	"memPerc": "0.613",
+	"PID": 5900,
+	"name": "SearchIndexer.exe"
+}, {
+	"memPerc": "0.402",
+	"PID": 5948,
+	"name": "BDRuntimeHost.exe"
+}, {
+	"memPerc": "0.195",
+	"PID": 6008,
+	"name": "PresentationFontCache.exe"
+}, {
+	"memPerc": "0.157",
+	"PID": 6044,
+	"name": "ModuleCoreService.exe"
+}, {
+	"memPerc": "0.201",
+	"PID": 6072,
+	"name": "NvStreamUserAgent.exe"
+}, {
+	"memPerc": "0.888",
+	"PID": 6076,
+	"name": "ShellExperienceHost.exe"
+}, {
+	"memPerc": "0.560",
+	"PID": 6168,
+	"name": "RuntimeBroker.exe"
+}, {
+	"memPerc": "0.112",
+	"PID": 6224,
+	"name": "conhost.exe"
+}, {
+	"memPerc": "0.181",
+	"PID": 6288,
+	"name": "BTTray.exe"
+}, {
+	"memPerc": "1.671",
+	"PID": 6308,
+	"name": "explorer.exe"
+}, {
+	"memPerc": "0.682",
+	"PID": 6704,
+	"name": "HSSCP.exe"
+}, {
+	"memPerc": "0.131",
+	"PID": 7000,
+	"name": "igfxEM.exe"
+}, {
+	"memPerc": "0.092",
+	"PID": 7008,
+	"name": "igfxHK.exe"
+}, {
+	"memPerc": "0.119",
+	"PID": 7016,
+	"name": "igfxTray.exe"
+}, {
+	"memPerc": "4.703",
+	"PID": 7280,
+	"name": "firefox.exe"
+}, {
+	"memPerc": "1.052",
+	"PID": 7312,
+	"name": "SearchUI.exe"
+}, {
+	"memPerc": "0.087",
+	"PID": 7552,
+	"name": "WUDFHost.exe"
+}, {
+	"memPerc": "0.146",
+	"PID": 7616,
+	"name": "RtkNGUI64.exe"
+}, {
+	"memPerc": "0.472",
+	"PID": 7672,
+	"name": "SystemSettings.exe"
+}, {
+	"memPerc": "0.129",
+	"PID": 7692,
+	"name": "nvtray.exe"
+}, {
+	"memPerc": "0.126",
+	"PID": 7956,
+	"name": "McClientAnalytics.exe"
+}, {
+	"memPerc": "0.005",
+	"PID": 8068,
+	"name": "RAVBg64.exe"
+}, {
+	"memPerc": "0.074",
+	"PID": 8108,
+	"name": "unsecapp.exe"
+}, {
+	"memPerc": "0.030",
+	"PID": 8360,
+	"name": "fontdrvhost.exe"
+}, {
+	"memPerc": "0.241",
+	"PID": 8444,
+	"name": "BingDesktop.exe"
+}, {
+	"memPerc": "0.085",
+	"PID": 8464,
+	"name": "vmware-tray.exe"
+}, {
+	"memPerc": "0.071",
+	"PID": 8508,
+	"name": "jusched.exe"
+}, {
+	"memPerc": "0.434",
+	"PID": 8520,
+	"name": "DCCService.exe"
+}, {
+	"memPerc": "0.036",
+	"PID": 9100,
+	"name": "DropboxOEM.exe"
+}, {
+	"memPerc": "0.754",
+	"PID": 9120,
+	"name": "DFSSvc.exe"
+}, {
+	"memPerc": "0.014",
+	"PID": 9200,
+	"name": "McUICnt.exe"
+}, {
+	"memPerc": "6.958",
+	"PID": 9272,
+	"name": "pycharm.exe"
+}, {
+	"memPerc": "0.205",
+	"PID": 9384,
+	"name": "DFS.Common.Agent.exe"
+}, {
+	"memPerc": "0.611",
+	"PID": 9524,
+	"name": "MDLCSvc.exe"
+}, {
+	"memPerc": "0.133",
+	"PID": 9720,
+	"name": "DellDataVaultWiz.exe"
+}, {
+	"memPerc": "0.414",
+	"PID": 9864,
+	"name": "DellUpService.exe"
+}, {
+	"memPerc": "0.390",
+	"PID": 9936,
+	"name": "DeliveryService.exe"
+}, {
+	"memPerc": "0.216",
+	"PID": 10176,
+	"name": "python.exe"
+}, {
+	"memPerc": "0.204",
+	"PID": 10284,
+	"name": "McCSPServiceHost.exe"
+}, {
+	"memPerc": "0.409",
+	"PID": 10552,
+	"name": "foobar2000.exe"
+}, {
+	"memPerc": "0.070",
+	"PID": 10968,
+	"name": "SkypeHost.exe"
+}, {
+	"memPerc": "0.122",
+	"PID": 11072,
+	"name": "WmiPrvSE.exe"
+}, {
+	"memPerc": "0.489",
+	"PID": 11096,
+	"name": "IAStorDataMgrSvc.exe"
+}, {
+	"memPerc": "0.220",
+	"PID": 11132,
+	"name": "DellDataVault.exe"
+}, {
+	"memPerc": "0.199",
+	"PID": 11168,
+	"name": "plugin-container.exe"
+}, {
+	"memPerc": "0.062",
+	"PID": 11208,
+	"name": "jhi_service.exe"
+}, {
+	"memPerc": "0.159",
+	"PID": 11252,
+	"name": "LMS.exe"
+}, {
+	"memPerc": "0.378",
+	"PID": 11484,
+	"name": "audiodg.exe"
+}, {
+	"memPerc": "0.147",
+	"PID": 11952,
+	"name": "isa.exe"
+}, {
+	"memPerc": "0.089",
+	"PID": 12456,
+	"name": "WmiApSrv.exe"
+}, {
+	"memPerc": "0.397",
+	"PID": 12564,
+	"name": "Music.UI.exe"
+}, {
+	"memPerc": "0.591",
+	"PID": 12724,
+	"name": "PRSvc.exe"
+}, {
+	"memPerc": "0.591",
+	"PID": 12864,
+	"name": "SupportAssistAgent.exe"
+}, {
+	"memPerc": "0.282",
+	"PID": 13080,
+	"name": "Video.UI.exe"
+}]
