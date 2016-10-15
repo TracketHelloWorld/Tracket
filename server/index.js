@@ -61,6 +61,16 @@ app.get('/', function (req, res) {
   }
 });
 
+app.get('/decodeTest', function(req, res) {
+  var base64String = "VGhpcyBpcyBhIHRlc3QNCnBscyB3b3Jr==";
+  var b = new Buffer(base64String, 'base64')
+  res.send(b.toString());
+});
+
+app.get('/getFiles/:uuid', function(req, res) {
+
+});
+
 app.get('/test', function(req, res) {
 	  res.sendFile(path + "/sockettest.html");
 });

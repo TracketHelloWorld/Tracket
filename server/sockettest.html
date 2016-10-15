@@ -3,7 +3,8 @@
   var socket = io();
   function registerMac()
   {
-    socket.emit("requestTest","testdata");
+    //testID
+    socket.emit("reqFiles",{"client":"testID","dir":"/Users/Hareesh/","file":"test.txt"});
   }
   socket.on("feedback",function(data)
   {

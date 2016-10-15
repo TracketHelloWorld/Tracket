@@ -1,9 +1,10 @@
 module.exports.socketIOinit = socketIOinit;
-module.exports.listenForMac = listenForMac;
-module.exports.onEventFromDesktop = onEventFromDesktop;
+module.exports.sendRequestToDesktop = sendRequestToDesktop;
+module.exports.requestFilesFromClient = requestFilesFromClient;
 
 var db = require('./db');
 var socketListeners = {};
+var clientListeners = {};
 //example: testmac: [socketobj1, socketobj2],
 
 function socketIOinit(io)
@@ -15,35 +16,54 @@ function socketIOinit(io)
     // call this immediately on PC client
     socket.on('registerListener',function(data){
       console.log("uid: " + data['UID']);
-      /*if (!socketListeners[macaddr]) {
-        socketListeners[macaddr] = [];
+      var uuid = data['UID'];
+      if (!socketListeners[uuid]) {
+        socketListeners[uuid] = [];
       }
-      socketListeners[macaddr].push(socket);*/
+      socketListeners[uuid].push(socket);
     });
+
+    //Browser/Mobile Requests
+    socket.on('reqFiles',function(data){
+      var client = data["client"];
+      var dir = data["dir"];
+      var file = data["file"];
+      requestFilesFromClient(file, dir, client);
+    });
+
+    //Server Requests
+    socket.on('fileData',function(data){
+      var base64data = data["filedata"];
+      var file = data["file"];
+      console.log("Base 64:");
+      console.log(base64data);
+      console.log("-=-=-=-=-=-=-=-=-=-=-=-");
+      console.log("file: " + file);
+      base64data = base64data.replace(/(\r\n|\n|\r)/gm,"");
+      var b = new Buffer(base64data, 'base64')
+      console.log(b.toString());
+    });
+    socket.on('dirData',function(data){
+      var dirData = data["syslist"];
+      console.log(dirData);
+    });
+
   });
 }
 
-function onEventFromDesktop(type, data, mac) {
-  if (socketListeners[mac]) {
-    socketListeners[mac].forEach(function(socket) {
+function sendRequestToDesktop(type, data, uuid) {
+  if (socketListeners[uuid]) {
+    socketListeners[uuid].forEach(function(socket) {
       socket.emit(type, data);
     });
   }
 }
 
-
-//junk
-function listenForMac(io,mac)
-{
-  db.selectAll("computers",function(results) {
-    results.forEach(function(result) {
-      console.log(result);
-      listenForMac(io,result.mac);
+function requestFilesFromClient(file, dir, uuid) {
+  if(socketListeners[uuid]) {
+    socketListeners[uuid].forEach(function(socket) {
+      var path = dir + file;
+      socket.emit("fileReq", {"dir":dir, "file":file});
     });
-  });
-  console.log(mac + '-status');
-
-    io.on(mac + '-tasks',function(data){
-
-    });
+  }
 }
