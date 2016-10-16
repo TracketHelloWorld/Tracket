@@ -18,10 +18,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=3916556066"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=3956208477"/>
-  <link rel="stylesheet" type="text/css" href="css/filesystem.css?crc=3938859088" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/filesystem.css?crc=3919720969" id="pagesheet"/>
   <!-- JS includes -->
   <script type="text/javascript">
-   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/Jrrbcpx7E13CfbhDQ6NF3eX1kJV5tesILe3exwXaQpjfenbgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ68zSem0OWFyd1wKga4ydemajWq7fbRPSsMMeMw6MKG4fwuUIMMjgkMfH6qJuYIbMg6IJMJ7f6KdqMIbMs62JM4HgIuuShAbMZHtRwMB.js" type="text/javascript">\x3C/script>');
+   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/KvUUcCJ6HstFW0tseOarMOtQd9V9fL4mcXA50sDeh0vfenbgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ68zSem0OWFyd1wKga4ydemajWq7fbRPSsMMeMw6MKG4fwuUIMMjgkMfH6qJuYIbMg6IJMJ7f6KdqMIbMs62JM4HgIuuShAbMpV4RwMB.js" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -31,24 +31,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-$(function(){
-	$("#fileList li").not('.emptyMessage').click(function() {
-		   alert('Clicked list. ' + this.id);
-	});
-});
-</script>
-<script>
-$(function(){
-	$("#folderList li").not('.emptyMessage').click(function() {
-		   alert('Clicked list. ' + this.id);
-	});
-});
-</script>
-<script>
-$(document).ready(function(){
+
+var dir = "/Users";
+$("#path").text(dir);
+
+//$(document).ready(function(){
     
 
     var socket = io();
+	socket.emit("reqFiles", {"client": "testID", "dir": dir, "file": ""});
     function testReq()
     {
         //testID
@@ -57,10 +48,67 @@ $(document).ready(function(){
     socket.on("fileReady",function(data){
         console.log(data);
         console.log(data["url"]);
+		window.open(data["url"], '_blank');
+		if (win) {
+			//Browser has allowed it to be opened
+			win.focus();
+		} else {
+			//Browser has blocked it
+			alert('Please allow popups for this website');
+		}
         $("#text").load(data["url"]/**put url here**/);
+		
     });
+	socket.on("dirReady",function(data){
+		console.log(data);
+		var arr = data.syslist;
+		console.log(arr);
+		console.log("dirReady");
+		
+		$("#folderList").empty();
+		
+		$.each(arr, function(index, value) {
+			$("#folderList").append("<li>" + value + "</li>");
+		});
+		$(function(){
+			$("#folderList li").not('.emptyMessage').not("#parent").click(function() {
+				   var selection = $(this).text();
+				   if (selection.includes(".")) {
+					   socket.emit("reqFiles", {"client": "testID", "dir": dir, "file": selection});
+				   } else {
+					   dir += "/" + selection;
+					   console.log(dir);
+					   $("#path").text(dir);
+					   socket.emit("reqFiles", {"client": "testID", "dir": dir, "file": ""});
+				   }
+			});
+			
+				
+	});
+	$(function(){
+		var flag = false;
+		$("#parent").not('.emptyMessage').click(function() {
+					if(flag === false) {
+						dir = dir.substring(0, dir.length - 2);
+						dir = dir.substring(0, dir.lastIndexOf("/"));
+						console.log(dir);
+						$("#path").text(dir);
+						socket.emit("reqFiles", {"client": "testID", "dir": dir, "file": ""});
+						flag = true;
+						setTimeout(function() { 
+							flag = false;
+						},1000)
+							
+					}
+				});
+	
+	
+		});		
+    });
+	
+	
     
-});
+//});
 </script>
  </head>
  <body>
@@ -86,7 +134,8 @@ $(document).ready(function(){
     <img class="block" id="u715_img" src="images/xmlid_1_.png?crc=4289890740" alt="" data-image-width="50" data-image-height="25"/>
    </div>
    <div class="clearfix colelem" id="u637-4"><!-- content -->
-    <p>Go to Parent Directory</p>
+    <p id="parent">Go to Parent Directory</p>
+    <p id="path">Go to Parent Directory</p>
     <ul id="folderList">
     <li id="dir1">Directory 1</li>
         <li id="dir2">Directory 2</li>
@@ -97,14 +146,6 @@ $(document).ready(function(){
    </div>
    <div class="clearfix colelem" id="u654-4"><!-- content -->
     <!--<p>this is the text for the directory</p>-->
-    <ul id="fileList">
-   	<li id="item1">text1</li>
-    	<li id="item2">text2</li>
-        	<li id="item3">text3</li>
-            	<li id="item4">text4</li>
-              		<li id="item5">text5</li>
-      
-   </ul>
    </div>
    <div class="verticalspacer" data-offset-top="656" data-content-above-spacer="656" data-content-below-spacer="112"></div>
    <div class="browser_width colelem" id="u107-bw">
