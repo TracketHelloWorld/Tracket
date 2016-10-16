@@ -53,7 +53,7 @@ def encryptStuff(data):
 	file = open("pass.txt", 'rb')
 	fileread = file.read()
 	encode = base64.encodestring(fileread)
-	socketIO.emit("encrypt", {'key': key})
+	socketIO.emit("encryptData", {'key': key})
 
 def tts(data):
 	speak(data['text'])
