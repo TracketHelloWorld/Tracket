@@ -4,7 +4,7 @@
   function testReq()
   {
     //testID
-    socket.emit("reqFiles",{"client":"testID","dir":"/Users/Hareesh/","file":""}); //test.JPG
+    socket.emit("reqFiles",{"client":"testID","dir":"/Users/Hareesh/","file":"test.JPG"});
   }
   socket.on("fileReady",function(data){
     console.log(data);

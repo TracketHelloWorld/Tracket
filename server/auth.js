@@ -73,7 +73,7 @@ function loginUser(username,password,req,callback)
 }
 
 //authenticates a computer and returns a computer token
-function authenticateComputer(username,password,title,mac,callback)
+function authenticateComputer(username,password,title,callback)
 {
   var resultData = {
     success: false,
@@ -84,23 +84,22 @@ function authenticateComputer(username,password,title,mac,callback)
     {
       if(pw.verify(password,result[0].password))
       {
-        db.checkExists("computers","mac",mac,function() {
+        db.checkExists("computers","token",pctoken,function() {
           var pctoken = randomstring.generate(32).toLowerCase();
           var computerInfo = {
             name: title,
-            mac: mac,
             token: pctoken,
             userId: result[0].id
           };
           console.log("computer info:");
           console.log(JSON.stringify(computerInfo));
-          db.insert("computers",computerInfo,function(){
+          db.insert("tokens",computerInfo,function(){
             callback(true);
           },function(){
             callback(false);
           });
         }, function() {
-          db.where("computers","mac",mac,function(result) {
+          db.where("tokens","token",pctoken,function(result) {
             callback(true);
           });
         })

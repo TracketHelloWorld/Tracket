@@ -7,7 +7,7 @@ var path = require('path').dirname(require.main.filename);
 
 function decodeBase64(base64data) {
   base64data = base64data.replace(/(\r\n|\n|\r)/gm,"");
-  var b = new Buffer(base64data, 'base64')
+  var b = new Buffer(base64data, 'base64');
   return b;
 }
 

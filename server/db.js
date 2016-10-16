@@ -7,6 +7,7 @@ module.exports.initializeDB = initializeDB;
 module.exports.checkExists = checkExists;
 module.exports.insert = insert;
 module.exports.where = where;
+module.exports.replace = replace;
 module.exports.selectAll = selectAll;
 module.exports.getUserId = getUserId;
 module.exports.getCurrentUserId = getCurrentUserId;
@@ -68,6 +69,7 @@ function replace(table,data,successCallback,failCallback)
     else successCallback();
   });
 }
+
 
 function deleteRows(table,key,value,doneCallback)
 {
