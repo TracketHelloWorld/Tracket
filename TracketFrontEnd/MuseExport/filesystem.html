@@ -17,11 +17,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>FileSystem</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=3916556066"/>
-  <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=3813487929"/>
-  <link rel="stylesheet" type="text/css" href="css/filesystem.css?crc=4002749608" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=3956208477"/>
+  <link rel="stylesheet" type="text/css" href="css/filesystem.css?crc=3938859088" id="pagesheet"/>
   <!-- JS includes -->
   <script type="text/javascript">
-   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/xIEHO9q2VGxzN7aRK3i9_A2IqJvZE2PwUeWP4Rs4lWvfenbgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ68zSem0OWFyd1wKga4ydemajWq7fbRPSsMMeMw6MKG4fwuUIMMjgkMfH6qJuYIbMg6IJMJ7f6KdqMIbMs62JM4HgIuuShAbMinlKvMB.js" type="text/javascript">\x3C/script>');
+   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/Jrrbcpx7E13CfbhDQ6NF3eX1kJV5tesILe3exwXaQpjfenbgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ68zSem0OWFyd1wKga4ydemajWq7fbRPSsMMeMw6MKG4fwuUIMMjgkMfH6qJuYIbMg6IJMJ7f6KdqMIbMs62JM4HgIuuShAbMZHtRwMB.js" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -33,14 +33,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 <script>
 $(function(){
 	$("#fileList li").not('.emptyMessage').click(function() {
-		   alert('Clicked list. ' + this.val);
+		   alert('Clicked list. ' + this.id);
 	});
 });
 </script>
 <script>
 $(function(){
 	$("#folderList li").not('.emptyMessage').click(function() {
-		   alert('Clicked list. ' + this.val);
+		   alert('Clicked list. ' + this.id);
 	});
 });
 </script>
@@ -66,22 +66,27 @@ $(document).ready(function(){
  <body>
 
   <div class="clearfix borderbox" id="page"><!-- column -->
-   <div class="clearfix colelem" id="pu104"><!-- group -->
+   <div class="clearfix colelem" id="pu770"><!-- group -->
+    <div class="browser_width grpelem" id="u770-bw">
+     <div id="u770"><!-- simple frame --></div>
+    </div>
     <div class="browser_width grpelem" id="u104-bw">
      <div id="u104"><!-- simple frame --></div>
     </div>
     <div class="browser_width grpelem" id="u186-4-bw">
      <a class="nonblock nontext clearfix" id="u186-4" href="index.html"><!-- content --><p>Tracket</p></a>
     </div>
-   </div>
-   <div class="clearfix colelem" id="pbuttonu307"><!-- group -->
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu307" href="text2speech.html"><!-- container box --><div class="clearfix grpelem" id="u308-4"><!-- content --><p>Text to Speech</p></div></a>
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu309" href="webcam.html"><!-- container box --><div class="clearfix grpelem" id="u310-4"><!-- content --><p>Webcam</p></div></a>
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu311" href="keylogging.html"><!-- container box --><div class="clearfix grpelem" id="u312-4"><!-- content --><p>Keylogging</p></div></a>
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu313" href="ransomware.html"><!-- container box --><div class="clearfix grpelem" id="u314-4"><!-- content --><p>Ransomware</p></div></a>
     <a class="nonblock nontext Button ButtonSelected clearfix grpelem" id="buttonu315" href="filesystem.html"><!-- container box --><div class="clearfix grpelem" id="u316-4"><!-- content --><p>File System</p></div></a>
    </div>
+   <div class="clip_frame colelem" id="u715"><!-- image -->
+    <img class="block" id="u715_img" src="images/xmlid_1_.png?crc=4289890740" alt="" data-image-width="50" data-image-height="25"/>
+   </div>
    <div class="clearfix colelem" id="u637-4"><!-- content -->
+    <p>Go to Parent Directory</p>
     <ul id="folderList">
     <li id="dir1">Directory 1</li>
         <li id="dir2">Directory 2</li>
@@ -91,17 +96,16 @@ $(document).ready(function(){
     </ul>
    </div>
    <div class="clearfix colelem" id="u654-4"><!-- content -->
-   <ul id="fileList">
-   <li id="item1">text1</li>
-      <li id="item2">text2</li>
-         <li id="item3">text3</li>
-            <li id="item4">text4</li>
-               <li id="item5">text5</li>
+    <!--<p>this is the text for the directory</p>-->
+    <ul id="fileList">
+   	<li id="item1">text1</li>
+    	<li id="item2">text2</li>
+        	<li id="item3">text3</li>
+            	<li id="item4">text4</li>
+              		<li id="item5">text5</li>
       
    </ul>
-    
    </div>
-   
    <div class="verticalspacer" data-offset-top="656" data-content-above-spacer="656" data-content-below-spacer="112"></div>
    <div class="browser_width colelem" id="u107-bw">
     <div id="u107"><!-- simple frame --></div>
