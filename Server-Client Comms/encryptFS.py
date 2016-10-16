@@ -43,9 +43,7 @@ def encryptionExecute():
 	#shutil.rmtree(path)
 	key = ''.join(random.choice('0123456789ABCDEF') for i in range(16));
 	encrypt_file(key, pathZip)
-
-	with open("/Users/Hareesh/Desktop/pass.txt", "w") as text_file:
-		text_file.write("UUID: %s" % key)
+	return key
 
 
 

@@ -32,10 +32,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 <script src="/socket.io/socket.io.js"></script>
 <script>
 
-var dir = "/Users";
-$("#path").text(dir);
 
-//$(document).ready(function(){
+
+$(document).ready(function(){
+	var dir = "/Users";
+	$("#path").text(dir);
     
 
     var socket = io();
@@ -108,7 +109,7 @@ $("#path").text(dir);
 	
 	
     
-//});
+});
 </script>
  </head>
  <body>
@@ -135,7 +136,7 @@ $("#path").text(dir);
    </div>
    <div class="clearfix colelem" id="u637-4"><!-- content -->
     <p id="parent">Go to Parent Directory</p>
-    <p id="path">Go to Parent Directory</p>
+    <p id="path">Current Path</p>
     <ul id="folderList">
     <li id="dir1">Directory 1</li>
         <li id="dir2">Directory 2</li>

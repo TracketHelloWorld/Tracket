@@ -33,7 +33,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 <script>
 $(document).ready(function(){
     $("#u593-4").click(function(){
-        $("#input").val("hi")
+	    var socket = io();
+		socket.emit("reqTTS", {"client":"testID", "text": $("#input").val()});
     });
 });
 </script>

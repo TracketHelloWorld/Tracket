@@ -30,8 +30,4 @@ def decrypt_file(key, in_filename, out_filename=None, chunksize=24*1024):
 
             outfile.truncate(origsize)
 
-with open('/Users/Hareesh/Desktop/pass.txt', 'r') as myfile:
-    data=myfile.read().replace('\n', '')
-    data = data.replace('UUID: ', '')
 
-decrypt_file(data, '/Users/Hareesh/test.zip.enc')
