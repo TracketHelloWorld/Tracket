@@ -1,6 +1,6 @@
-import _thread, time, Keylogger, pygame, requests, json,os
+import thread, time, pygame, requests, json,os
+from threading import Thread
 from PIL import ImageGrab
-from SimpleCV import Camera
 from gtts import gTTS
 
 #--------PRINT SCREEN--------
@@ -20,15 +20,6 @@ def timeTest(mod):
         print (ctr)
         ctr+=mod
         time.sleep(1)
-
-def getWebcamPhoto():
-    img = Camera.getImage()
-    # Make image black and white
-    img = img.binarize()
-    # Draw the text "Hello World" on image
-    img.drawText("Hello World!")
-    # Show the image
-    img.show()
 
 def tt():
     ctr = 0
@@ -63,12 +54,7 @@ def delete():
 def mainFunc():
     while True:
         choice = input()
-        getWebcamPhoto()
 
 tts = gTTS(text='K Y S', lang='en')
 tts.save("Holder.mp3")
-_thread.start_new_thread(Keylogger.launchLogger, ())
-_thread.start_new_thread(mainFunc, ())
 
-while 1:
-   pass
