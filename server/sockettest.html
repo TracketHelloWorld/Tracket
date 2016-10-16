@@ -1,20 +1,14 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io();
-  function registerMac()
+  function testReq()
   {
     //testID
-    socket.emit("reqFiles",{"client":"testID","dir":"/Users/Hareesh/","file":"test.txt"});
+    socket.emit("reqFiles",{"client":"testID","dir":"/Users/Hareesh/","file":"test.JPG"});
   }
-  socket.on("feedback",function(data)
-  {
-    console.log("feedback");
+  socket.on("fileReady",function(data){
     console.log(data);
-  });
-  socket.on("tasks",function(data)
-  {
-    console.log("tasks");
-    console.log(data);
+    console.log(data["url"]);
   });
 </script>
-<a href="#" onclick="registerMac()">Start</a>
+<a href="#" onclick="testReq()">Start</a>

@@ -67,8 +67,12 @@ app.get('/decodeTest', function(req, res) {
   res.send(b.toString());
 });
 
-app.get('/getFiles/:uuid', function(req, res) {
-
+app.get('/getFile/:uuid/:file', function(req, res) {
+  var file = path + "/userfiles/" + req.params.uuid + "/" + req.params.file;
+  if(fs.existsSync(file))
+  {
+    res.sendFile(file);
+  }
 });
 
 app.get('/test', function(req, res) {
