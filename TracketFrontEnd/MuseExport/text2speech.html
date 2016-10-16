@@ -17,11 +17,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>Text2Speech</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=3916556066"/>
-  <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=320615773"/>
-  <link rel="stylesheet" type="text/css" href="css/text2speech.css?crc=3966892722" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=3813487929"/>
+  <link rel="stylesheet" type="text/css" href="css/text2speech.css?crc=448994" id="pagesheet"/>
   <!-- JS includes -->
   <script type="text/javascript">
-   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/tgsOnlBmT8B4d7b9Cj8eIq2h4tAC7wgn8QmtJlQAKGXfeTtgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ6ikjAU8ihBoJ68zSem0OWFyd1w7f6KdqMIbMg62JMJ7fbRPSsMgeMw6MqGIQWmDZZMgnOAH3M9.js" type="text/javascript">\x3C/script>');
+   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/05CawpFeFpCjFNvpZDN55XMVBJ4zTuvnl4OpZxr5zKjfeTtgf5W0lbIPH2JoFDqh52mLwQZyZcZRjhwUwQ9h5em8F2BKFeJtw2bkwRjDjQwDw26-FPG0iemti24DSem8jh60jhNlOYs8pYbkSag8ZAFGOcFzdPUaiaS0iemti24DSem8jh60jhNlJ68zSem0OWFyd1wKga4ydemajWq7fbRPSsMMeMw6MKGHf40bMsMgeMw6MqGIQWmDZZMgtlHO3M9.js" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -29,12 +29,25 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 </script>
     <!--custom head HTML-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+$(document).ready(function(){
+    $("#u593-4").click(function(){
+        $("#input").val("hi")
+    });
+});
+</script>
  </head>
  <body>
 
   <div class="clearfix borderbox" id="page"><!-- column -->
-   <div class="clearfix colelem" id="u104"><!-- group -->
-    <a class="nonblock nontext clearfix grpelem" id="u186-4" href="index.html"><!-- content --><p>Tracket</p></a>
+   <div class="clearfix colelem" id="pu104"><!-- group -->
+    <div class="browser_width grpelem" id="u104-bw">
+     <div id="u104"><!-- simple frame --></div>
+    </div>
+    <div class="browser_width grpelem" id="u186-4-bw">
+     <a class="nonblock nontext clearfix" id="u186-4" href="index.html"><!-- content --><p>Tracket</p></a>
+    </div>
    </div>
    <div class="clearfix colelem" id="pbuttonu307"><!-- group -->
     <a class="nonblock nontext Button ButtonSelected clearfix grpelem" id="buttonu307" href="text2speech.html"><!-- container box --><div class="clearfix grpelem" id="u308-4"><!-- content --><p>Text to Speech</p></div></a>
@@ -43,7 +56,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu313" href="ransomware.html"><!-- container box --><div class="clearfix grpelem" id="u314-4"><!-- content --><p>Ransomware</p></div></a>
     <a class="nonblock nontext Button clearfix grpelem" id="buttonu315" href="filesystem.html"><!-- container box --><div class="clearfix grpelem" id="u316-4"><!-- content --><p>File System</p></div></a>
    </div>
-   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="159" data-content-below-spacer="609"></div>
+   <div class="colelem" id="u627"><!-- custom html -->
+    <form method="post"><textarea name="text2speech" type="text" id="input" style="width:30em; height: 150pt; padding:2%;font-size:1em;background-color:#ebebeb;" required></textarea></form>
+   </div>
+   <div class="Button clearfix colelem" id="buttonu591"><!-- container box -->
+    <div class="clearfix grpelem" id="u593-4"><!-- content -->
+     <p>Submit</p>
+    </div>
+   </div>
+   <div class="verticalspacer" data-offset-top="506" data-content-above-spacer="505" data-content-below-spacer="263"></div>
    <div class="browser_width colelem" id="u107-bw">
     <div id="u107"><!-- simple frame --></div>
    </div>
